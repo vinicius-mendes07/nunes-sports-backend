@@ -1,3 +1,4 @@
+require('dotenv').config();
 require('express-async-errors');
 const express = require('express');
 const cors = require('./app/middlewares/cors');
@@ -13,4 +14,4 @@ app.use(routes);
 
 app.use(errorHandler);
 
-app.listen(3000, () => console.log('server started'));
+app.listen(process.env.PORT || 3000, () => console.log('server started'));
